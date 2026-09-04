@@ -10,6 +10,13 @@
         trailingIcon: 'i-lucide-arrow-right',
         size: 'xl'
       }, {
+        label: 'Questions',
+        to: '/questions',
+        trailingIcon: 'i-lucide-arrow-right',
+        size: 'xl',
+        color: 'neutral',
+        variant: 'subtle'
+      }, {
         label: 'Use this template',
         to: 'https://github.com/nuxt-ui-templates/starter',
         target: '_blank',

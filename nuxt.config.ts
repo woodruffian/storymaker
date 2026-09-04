@@ -1,12 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+const isFastDev = process.env.NUXT_FAST_DEV === '1'
+
 export default defineNuxtConfig({
   modules: [
-    '@nuxt/eslint',
+    ...isFastDev ? [] : ['@nuxt/eslint'],
     '@nuxt/ui'
   ],
 
   devtools: {
-    enabled: true
+    enabled: false
   },
 
   runtimeConfig: {
@@ -22,10 +24,17 @@ export default defineNuxtConfig({
         'lucide:arrow-right',
         'lucide:blocks',
         'lucide:chevron-down',
+        'lucide:circle-alert',
         'lucide:code-2',
         'lucide:palette',
+        'lucide:pencil',
+        'lucide:plus',
+        'lucide:refresh-cw',
         'lucide:rocket',
+        'lucide:save',
         'lucide:shield-check',
+        'lucide:trash-2',
+        'lucide:x',
         'lucide:zap',
         'simple-icons:github',
         'simple-icons:nuxtdotjs'
@@ -41,6 +50,9 @@ export default defineNuxtConfig({
 
   eslint: {
     config: {
+      devtools: {
+        enabled: false
+      },
       stylistic: {
         commaDangle: 'never',
         braceStyle: '1tbs'
